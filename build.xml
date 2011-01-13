@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-** This is a template build file for a JOSM  plugin.
-**
-** Maintaining versions
-** ====================
-** see README.template
-**
-** Usage
-** =====
-** To build it run
-**
-**    > ant  dist
-**
-** To install the generated plugin locally (in you default plugin directory) run
-**
-**    > ant  install
-**
-** The generated plugin jar is not automatically available in JOSMs plugin configuration
-** dialog. You have to check it in first.
-**
-** Use the ant target 'publish' to check in the plugin and make it available to other
-** JOSM users:
-**    set the properties commit.message and plugin.main.version
-** and run
-**    > ant  publish
-**
-**
--->
-<project name="myPluginName" default="dist" basedir=".">
+<project name="CommandLine" default="dist" basedir=".">
 
     <!-- enter the SVN commit message -->
-    <property name="commit.message" value="Commit message" />
+    <property name="commit.message" value="Initial commit" />
     <!-- enter the *lowest* JOSM version this plugin is currently compatible with -->
-    <property name="plugin.main.version" value="" />
+    <property name="plugin.main.version" value="3751" />
 
 
     <!--
@@ -99,12 +71,14 @@
         ************************************************
     -->
             <manifest>
-                <attribute name="Author" value="..."/>
-                <attribute name="Plugin-Class" value="..."/>
+                <attribute name="Author" value="Hind"/>
+                <attribute name="Plugin-Class" value="CommandLine.CommandLine"/>
                 <attribute name="Plugin-Date" value="${version.entry.commit.date}"/>
-                <attribute name="Plugin-Description" value="..."/>
-                <attribute name="Plugin-Icon" value="..."/>
-                <attribute name="Plugin-Link" value="..."/>
+                <attribute name="Plugin-Description" value="Implements a command line and enables to create your commands. See link for standard commands (arc, circle etc.)"/>
+                <attribute name="ru_Plugin-Description" value="Реализует командную строку с возможностью создания своих команд. Стандартные команды можно скачать по ссылке."/>
+                <attribute name="Plugin-Icon" value="images/commandline.png"/>
+                <attribute name="Plugin-Link" value="http://wiki.openstreetmap.org/wiki/JOSM/Plugins/CommandLine"/>
+                <attribute name="ru_Plugin-Link" value="http://wiki.openstreetmap.org/wiki/RU:JOSM/Plugins/CommandLine"/>
                 <attribute name="Plugin-Mainversion" value="${plugin.main.version}"/>
                 <attribute name="Plugin-Version" value="${version.entry.commit.revision}"/>
             </manifest>
